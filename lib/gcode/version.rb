@@ -1,0 +1,3 @@
+module Gcode
+  VERSION = '0.0.1'
+end
