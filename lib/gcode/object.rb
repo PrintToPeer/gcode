@@ -56,14 +56,14 @@ module Gcode
                 :width, :depth, :height, :layers, :total_duration, :comments,
                 :layer_ranges
 
-    # Creates a GCode {Object}.
-    # @param data [String] path to a GCode file on the system.
-    # @param data [Array] with each element being a line of GCode.
+    # Creates a Gcode {Object}.
+    # @param data [String] path to a Gcode file on the system.
+    # @param data [Array] with each element being a line of Gcode.
     # @param auto_process [Boolean] enable/disable auto processing.
     # @param default_speed [Float] the default speed (in mm/minute) for moves that don't have one declared.
     # @param acceleration [Float] the acceleration rate set in the printer' firmware.
-    # @return [Object] if data is valid, returns a GCode {Object}.
-    # @return [false] if data is not an array, path, didn't contain GCode or default_speed wasn't a number grater than 0.
+    # @return [Object] if data is valid, returns a Gcode {Object}.
+    # @return [false] if data is not an array, path, didn't contain Gcode or default_speed wasn't a number grater than 0.
     def initialize(options = {})
       if options.is_a?(Array)
         temp_data = options
@@ -128,7 +128,7 @@ module Gcode
       !empty?
     end
 
-    # Checks if the GCode object contains multiple materials.
+    # Checks if the Gcode object contains multiple materials.
     # @return [nil] if processing hasn't been done.
     # @return [Boolean] true if multiple extruders used, false otherwise.
     def multi_material?

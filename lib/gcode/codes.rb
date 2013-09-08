@@ -1,5 +1,5 @@
 module Gcode
-  # Contains GCodes.
+  # Contains Gcodes.
   module Codes
     # Do a rapid move.
     RAPID_MOVE      = 'G0'
@@ -45,7 +45,7 @@ module Gcode
     SET_SD_POSITION = 'M26'
     # Report SD printing status.
     SD_PRINT_STATUS = 'M27'
-    # Write following GCodes to given file (requires 8.3 file name).
+    # Write following Gcodes to given file (requires 8.3 file name).
     START_SD_WRITE  = 'M28'
     # Signal end of SD write, following commands will be executed as normal.
     STOP_SD_WRITE   = 'M29'

@@ -1,7 +1,7 @@
 require 'gcode/codes'
 
 module Gcode
-  # Represents a single line in a GCode file, parse expression tester: {http://rubular.com/}
+  # Represents a single line in a Gcode file, parse expression tester: {http://rubular.com/}
   class Line
     include Codes
 
@@ -32,15 +32,15 @@ module Gcode
     #   @!attribute [r] $1
     #     @return [String] the line, upcased and stripped of whitespace.
     #   @!attribute [r] $2
-    #     @return [nil] if the line wasn't valid GCode.
+    #     @return [nil] if the line wasn't valid Gcode.
     #     @return [MatchData] the raw matches from the regular expression evaluation.
     attr_reader :raw, :matches
 
-    # GCode matching pattern
+    # Gcode matching pattern
     GCODE_PATTERN = /^(?<line>(?<command>((?<command_letter>[G|M|T])(?<command_number>\d{1,3}))) ?(?<regular_data>([S](?<s_data>\d*))? ?([P](?<p_data>\d*))? ?([X](?<x_data>[-]?\d+\.?\d*))? ?([Y](?<y_data>[-]?\d+\.?\d*))? ?([Z](?<z_data>[-]?\d+\.?\d*))? ?([F](?<f_data>\d+\.?\d*))? ?([E|A](?<e_data>[-]?\d+\.?\d*))?)? ?(?<string_data>[^;]*)?)? ?;?(?<comment>.*)?$/
 
     # Creates a {Line}
-    # @param line [String] a line of GCode.
+    # @param line [String] a line of Gcode.
     # @return [false] if line is empty or doesn't match the evaluation expression.
     # @return [Line]
     def initialize(line)
@@ -106,9 +106,9 @@ module Gcode
 
 ## Line value functions
 
-    # Striped version of the input GCode, or nil if not valid GCode
-    # @return [String] striped line of GCode.
-    # @return [nil] if no GCode was present .
+    # Striped version of the input Gcode, or nil if not valid Gcode
+    # @return [String] striped line of Gcode.
+    # @return [nil] if no Gcode was present .
     def line
       if @line.nil? && !@matches[:line].nil?
         @line = @matches[:line].strip
