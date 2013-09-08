@@ -3,7 +3,7 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'gcode/version'
 
-Gem::gemification.new do |gem|
+Gem::Specification.new do |gem|
   gem.name          = 'gcode'
   gem.version       = Gcode::VERSION
   gem.authors       = ['Kaz Walker']
